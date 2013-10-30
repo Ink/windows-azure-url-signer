@@ -1,0 +1,28 @@
+{
+  "name": "windows-azure-url-signer",
+  "version": "0.0.1",
+  "description": "Module to sign urls to allow access to the private blobs in windows azure",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ink/windows-azure-url-signer"
+  },
+  "keywords": [
+    "windows",
+    "azure",
+    "url",
+    "signing"
+  ],
+  "author": {
+    "name": "Brett van Zuiden (Ink)"
+  },
+  "license": "BSD",
+  "readme": "##Windows Azure url signer\n\nModule to sign urls to allow access to the private blobs in windows azure \n\n###To install\n\n    npm install windows-azure-url-signer\n\n###Use example\n\n    var sig= require('windows-azure-url-signer');\n\n    var account1 = sig.urlSigner('my key', 'my secret');\n    var account2 = sig.urlSigner('my key2', 'my secret2');\n    \n    var url1 = account1.getUrl('GET', 'somefile.png', 'mycontainer', 10); //url expires in 10 minutes\n    var url2 = account2.getUrl('PUT', '/somedir/somefile.png', 'mycontaineronotheraccount', 100); //url expires in 100 minutes\n\n###Credits\n\nInspired by and derived from [amazon-s3-url-signer](https://github.com/dyashkir/amazon-s3-url-signer).\n\n###License\n\nBSD, because that's what amazon-s3-url-signer is\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/Ink/windows-azure-url-signer/issues"
+  }
+}
